@@ -1,0 +1,25 @@
+services:
+  _defaults:
+      autowire: true
+      autoconfigure: true
+      public: false
+
+  HoPeter1018\DoctrineFullTextSearchBundle\Command\:
+    resource: '../../Command/*'
+
+  HoPeter1018\DoctrineFullTextSearchBundle\Repository\:
+    resource: '../../Repository/*'
+
+  HoPeter1018\DoctrineFullTextSearchBundle\Services\:
+    resource: '../../Services/*'
+
+  HoPeter1018\DoctrineFullTextSearchBundle\Services\IndexManager:
+    public: true
+
+  HoPeter1018\DoctrineFullTextSearchBundle\EventListener\FullTextSearchListener:
+    tags:
+      # - { name: doctrine.event_listener, event: loadClassMetadata }
+      # - { name: doctrine.event_listener, event: postLoad }
+      - { name: doctrine.event_listener, event: postPersist }
+      - { name: doctrine.event_listener, event: postUpdate }
+      - { name: doctrine.event_listener, event: preRemove }
