@@ -116,6 +116,8 @@ $list = $repo->findBy(['id' => $ids]);
 -   [ ] Enhance Annotation
     -   [ ] Add more property
 -   [ ] Add Command to
+    -   ReIndex
+    -   Search
 -   [ ] Add helpers to
     -   [ ] SonataAdmin
     -   [ ] ApiPlatform
