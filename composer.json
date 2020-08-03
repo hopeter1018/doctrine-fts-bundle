@@ -2,7 +2,7 @@
     "name": "hopeter1018/doctrine-full-text-search-bundle",
     "description": "This bundle add doctrine full text search",
     "keywords": ["Symfony", "Bundle", "Doctrine", "Full Text Search", "fts", "Sonata Admin", "Api Platform"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
