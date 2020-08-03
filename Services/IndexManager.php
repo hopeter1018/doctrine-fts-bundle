@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace HoPeter1018\DoctrineFullTextSearchBundle\Services;
 
-use Doctrine\Common\Annotations\AnnotationReader;
+use Doctrine\Common\Annotations\Reader;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use HoPeter1018\DoctrineFullTextSearchBundle\Annotation\Column;
 use HoPeter1018\DoctrineFullTextSearchBundle\Annotation\ColumnGroup;
@@ -26,7 +26,7 @@ class IndexManager
     /** @var FormatterManager */
     protected $formatterManager;
 
-    /** @var AnnotationReader */
+    /** @var Reader */
     protected $annotationReader;
 
     /** @var PropertyAccessorInterface */
@@ -35,7 +35,7 @@ class IndexManager
     /** @var DynamicColumnDataRepository */
     protected $dynamicColumnDataRepository;
 
-    public function __construct(ManagerRegistry $managerRegistry, FormatterManager $formatterManager, AnnotationReader $annotationReader, PropertyAccessorInterface $propertyAccessor)
+    public function __construct(ManagerRegistry $managerRegistry, FormatterManager $formatterManager, Reader $annotationReader, PropertyAccessorInterface $propertyAccessor)
     {
         $this->managerRegistry = $managerRegistry;
         $this->formatterManager = $formatterManager;
