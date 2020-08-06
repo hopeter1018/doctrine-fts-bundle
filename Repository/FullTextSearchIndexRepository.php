@@ -6,6 +6,7 @@ namespace HoPeter1018\DoctrineFullTextSearchBundle\Repository;
 
 use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Exception;
 use HoPeter1018\DoctrineFullTextSearchBundle\Entity\FullTextSearchIndex;
 use HoPeter1018\DoctrineFullTextSearchBundle\Services\IndexManager;
 use Symfony\Bridge\Doctrine\RegistryInterface;

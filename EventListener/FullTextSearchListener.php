@@ -85,6 +85,12 @@ class FullTextSearchListener implements EventSubscriber
         $entity = $event->getObject();
         $entityFqcn = get_class($event->getObject());
         $classMetadata = $em->getClassMetadata($entityFqcn);
+
+        $indexes = $this->indexManager->parseAnno($entityFqcn);
+        if (false === $indexes['_']) {
+            return;
+        }
+
         $fullTextSearchIndexRepo = $em->getRepository(FullTextSearchIndex::class);
         $id = $this->propertyAccessor->getValue($entity, $classMetadata->getIdentifierFieldNames()[0]);
         $removed = $fullTextSearchIndexRepo->remove($entityFqcn, $id);
